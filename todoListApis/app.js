@@ -19,7 +19,9 @@ app.use("/tasks",require("./routes/tasks"))
 
 app.get("/",(req, res)=>{
     console.log("$someone have made get call");
+    
     res.send("welcome to todo list");
+    
 
 })
 app.listen(port,()=>{

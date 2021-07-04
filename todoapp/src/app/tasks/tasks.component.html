@@ -1,43 +1,118 @@
+<!DOCTYPE html>
 
-<div>
-<div class ="container">
-  <div class="card">
-    <div class="card-body">
-    <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
-      <input type="text" class="form-control" id="title" [(ngModel)] = "newTask.title">
-      <small id="emailHelp" class="form-text">put title of Task and HAVE FUN</small>
-    </div>
-    <div class="mb-3">
-      <label for="description" class="form-label">Description</label>
-      <input type="text" class="form-control" id="description" [(ngModel)] = "newTask.description">
-      <small id="emailHelp" class="form-text">put Description of Task and HAVE LUNCH</small>
-    </div>
-    <button (click) ="id==''?createTask():updateTask()" class ="btn btn-primary">{{id==''?'create':'Update'}}</button>
+<html>
+
+<head>
+
+
+<style type="text/CSS">
+
+
+
+  body {
+  background-color: rgb(9, 64, 182);
+}
+
+
+  h6 {
+  background-color: rgb(214, 228, 21);
+}
+
+
+</style>
+</head>
+
+<div >
+
+
+  <div class ="container" class="rounded">
+
+    <div class="card" >
+      <body>
+      <div class="card-body"  >
+
+        <body>
+
+
+        <div class="mb-3" class="search box">
+
+
+
+          <label for="title" class="form-label" >TITLE</label>
+          <input type="text" class="search-txt" name="" placeholder=":put title hear eg.Mean"class="form-control" id="title" [(ngModel)] = "newTask.title">
+          <!-- <small id="emailHelp" class="form-text"  >put title of Task and HAVE FUN</small> -->
+
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">DESCRIPTION</label>
+          <input type="text" class="search-txt" name="" placeholder=":put description here eg.Stack" class="form-control" id="description" [(ngModel)] = "newTask.description">
+          <!-- <small id="emailHelp" class="form-text">put Description of Task and HAVE LUNCH</small> -->
+
+        </div>
+          <button (click) = "id==''?createTask():updateTask()" class ="btn btn-primary">{{id==''?'create':'Update'}} </button>
+
+
+
+      </body>
+      </div>
+      </body>
     </div>
   </div>
-</div>
-  <br>
-  <br>
+    <br>
   <div class="row">
 
 
-<div *ngFor= "let t of tasks" class="col-md-4 col-sm-4 col-lg-4">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">{{t.title}}</h5>
-      {{t.description}}
+    <div *ngFor= "let t of tasks" class="col-md-3 col-sm-3 col-lg-3">
+      <div class="card">
+        <body>
 
+        <h6>
+        <div class="card-body">
+
+          <h5 class="card-title">{{t.title}}</h5>
+          {{t.description}}
+
+
+
+        </div>
+
+        <div class="card-body">
+
+
+          <button (click) ="setUpdate(t)" class="card-body" class ="btn btn-primary" style="margin-right: 8px">Update</button>
+
+
+          <a><button (click) ="deleteTask(t._id)" class="card-body" class ="btn btn-primary" onclick="return confirm('Are you sure you want to delete this')">Delete</button></a>
+
+
+
+          <!-- (click) ="deleteTask(t._id)" class="card-body" class ="btn btn-primary">Delete
+           -->
+          <!-- <input type="button"(click) ="deleteTask(t._id)"  class ="btn btn-primary" value="Delete" onclick="return confirm('Are you sure want to delete');"/> -->
+
+
+
+
+
+
+
+
+        </div>
+        </h6>
+        </body>
+
+
+
+      </div>
+      <br>
 
     </div>
-    <div class="card-body">
-      <a (click) ="setUpdate(t)" class="card-body">Update</a>
-      <a (click) ="deleteTask(t._id)" class="card-body">Delete</a>
-
-    </div>
-
-
   </div>
+</div>
 
-</div>
-</div>
+
+
+
+
+</html>
